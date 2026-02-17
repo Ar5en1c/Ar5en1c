@@ -40,4 +40,5 @@ YouxAI is not just a Chrome Extension; it's a comprehensive OS for your career.
 
 <br />
 
-![Kuldeep's GitHub stats](https://github-readme-stats.vercel.app/api?username=Ar5en1c&show_icons=true&theme=radical&hide_border=true)
+![Kuldeep's GitHub stats](https://github-readme-streak-stats.herokuapp.com/?user=Ar5en1c&theme=tokyonight&hide_border=true)
+
