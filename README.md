@@ -1,9 +1,18 @@
 # Hi there, I'm Kuldeep Singh 👋
 
-## Senior Software Engineer & Product Builder
-**Building Privacy-First AI Tools @ YouxAI | React 19, TypeScript, WebGPU | Ex-Walmart iOS**
+**Senior Software & AI Architect** | **WebGPU & iOS Infrastructure** | **Ex-Walmart**
 
-I am a Software Engineer who loves building practical, high-performance tools. Currently, I am engineering **[YouxAI](https://youxai.app)**, a **Privacy-First Career OS** that automates the entire job search lifecycle—from finding jobs to tailoring resumes—strictly within the browser.
+I engineer secure, massive-scale mobile and frontend infrastructure. My technical focus lies at the intersection of enterprise iOS architecture and bleeding-edge local AI inference (WebGPU/WASM). 
+
+At Walmart, I engineered robust iOS navigation architectures (Coordinator pattern) and optimized UI rendering concurrency for millions of active monthly users. In the open-source space, I actively build privacy-first AI infrastructure, including zero-latency inference engines capable of running massive 8k-context LLMs natively in the browser without server offloading.
+
+---
+
+### 🚀 Core Architecture Stack
+* **iOS:** Swift, SwiftUI, UIKit, Combine, MVVM-C, Swift Concurrency, XCode
+* **Frontend AI:** WebGPU (WASM), WebLLM, React 19, TypeScript, Manifest V3
+* **Backend:** Node.js, PostgreSQL, Supabase Edge Functions, GraphQL, AWS
+* **AI & ML** WebLLM, Transformers.js, MLC-LLM, Python (Pandas, NumPy)
 
 ---
 
@@ -34,17 +43,6 @@ An open-source platform for testing, chatting with, and comparing over 130+ open
 **Stack:** Vanilla JS/HTML5, WebLLM, WebGPU, Apache TVM / WASM.
 
 [**Live Demo**](https://ar5en1c.github.io/webllm-bench/) • [**View Repository**](https://github.com/Ar5en1c/webllm-bench)
-
----
-
-### 🛠 Tech Stack
-
-| Domain | Technologies |
-| :--- | :--- |
-| **Frontend** | React 19, TypeScript, Next.js, Tailwind CSS, HTML5/CSS3 |
-| **Mobile** | iOS (Swift, SwiftUI, UIKit, Combine), Xcode |
-| **AI & ML** | WebLLM, Transformers.js, MLC-LLM, Python (Pandas, NumPy) |
-| **Backend** | Node.js, PostgreSQL, Supabase, Django, AWS |
 
 ---
 
