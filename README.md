@@ -53,5 +53,3 @@ An open-source platform for testing, chatting with, and comparing over 130+ open
 - **Email:** [kponia05@gmail.com](mailto:kponia05@gmail.com)
 
 <br />
-
-![Kuldeep's GitHub stats](https://github-readme-streak-stats.herokuapp.com/?user=Ar5en1c&theme=tokyonight&hide_border=true)
