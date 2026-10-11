@@ -4,7 +4,7 @@
 
 I engineer secure, massive-scale mobile and frontend infrastructure. My technical focus lies at the intersection of enterprise iOS architecture and bleeding-edge local AI inference (WebGPU/WASM). 
 
-At Walmart, I engineered robust iOS navigation architectures (Coordinator pattern) and optimized UI rendering concurrency for millions of active monthly users. In the open-source space, I actively build privacy-first AI infrastructure, including zero-latency inference engines capable of running massive 8k-context LLMs natively in the browser without server offloading.
+At Walmart, I engineered robust iOS navigation architectures (Coordinator pattern) and optimized UI rendering concurrency for millions of active monthly users. In the open-source space, I actively build privacy-first AI infrastructure, including AI that runs on the user's own device, in the browser.
 
 ---
 
@@ -22,13 +22,13 @@ At Walmart, I engineered robust iOS navigation architectures (Coordinator patter
 > **A Privacy-First Career OS running wholly in your browser.**
 
 YouxAI is not just a Chrome Extension; it's a comprehensive OS for your career.
-- **Local AI Engine:** Runs LLMs (Qwen 2.5 1.5B) directly in-browser using **WebGPU**, ensuring user data never leaves the device.
-- **Hybrid Architecture:** Offloads heavy PDF parsing to **Supabase Edge Functions** while keeping sensitive data autofill strictly local.
+- **On-device AI:** Runs Gemma 4 E2B through Google LiteRT-LM inside a local AI SDK (about 2 GB, downloaded once). There is no cloud model for filling applications.
+- **Résumé parsing in the browser:** A deterministic parser reads the résumé on your computer. No model is involved.
 - **Universal Autofill:** Intelligent DOM agents that navigate and fill complex application portals (Workday, Greenhouse, Lever).
 
-**Stack:** React 19, TypeScript, Tailwind v4, Supabase, Transformers.js.
+**Stack:** React 19, TypeScript, Tailwind v4, Supabase, LiteRT-LM.
 
-[**View Repository**](https://github.com/Ar5en1c/YouxAI-Core) • [**Install Extension**](https://chromewebstore.google.com/detail/job-application-tracker/mggpimiojdmbijnlfeibpokbjnbcblnl)
+[**Install Extension**](https://chromewebstore.google.com/detail/job-application-tracker/mggpimiojdmbijnlfeibpokbjnbcblnl)
 
 <br />
 
