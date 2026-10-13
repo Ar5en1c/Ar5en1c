@@ -19,7 +19,7 @@ At Walmart, I engineered robust iOS navigation architectures (Coordinator patter
 ### 🚀 Featured Projects
 
 #### [YouxAI](https://youxai.app)
-> **A Privacy-First Career OS running wholly in your browser.**
+> **A Privacy-First Career OS with on-device AI, in your browser.**
 
 YouxAI is not just a Chrome Extension; it's a comprehensive OS for your career.
 - **On-device AI:** Runs Gemma 4 E2B through Google LiteRT-LM inside a local AI SDK (about 2 GB, downloaded once). There is no cloud model for filling applications.
@@ -35,10 +35,9 @@ YouxAI is not just a Chrome Extension; it's a comprehensive OS for your career.
 #### [WebLLM Bench](https://ar5en1c.github.io/webllm-bench/)
 > **A browser-native local LLM toolkit & benchmark harness.**
 
-An open-source platform for testing, chatting with, and comparing over 130+ open-weights models entirely on the client-side.
+An open-source platform for testing, chatting with, and comparing open-weights models entirely on the client-side.
 - **Zero-Server Benchmarking:** Runs strict parity tests (TPS, TTFT, Latency) directly on the user's hardware via **WebGPU**.
 - **Side-by-Side Comparison:** Compare model outputs and latency metrics simultaneously in the browser.
-- **8k Context Breakthrough:** Features a reproducible, custom-compiled WebGPU build of `Qwen2.5-1.5B` at 8192 context, validated to hold parity with the standard 4k MLC baseline.
 
 **Stack:** Vanilla JS/HTML5, WebLLM, WebGPU, Apache TVM / WASM.
 
