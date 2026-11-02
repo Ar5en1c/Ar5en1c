@@ -1,54 +1,38 @@
-# Hi there, I'm Kuldeep Singh 👋
+# Kuldeep Singh
 
-**Senior Software & AI Architect** | **WebGPU & iOS Infrastructure** | **Ex-Walmart**
+Founder of [YouxAI](https://youxai.app). I work on running small language models fast and correctly inside a web browser, on ordinary laptops and gaming GPUs. Before that I was an iOS developer at Walmart, on the US shopping app (100M+ downloads).
 
-I engineer secure, massive-scale mobile and frontend infrastructure. My technical focus lies at the intersection of enterprise iOS architecture and bleeding-edge local AI inference (WebGPU/WASM). 
+YouxAI needed private, on-device AI. That led me to write my own WebGPU engine, the engine led me to a GPU driver bug on NVIDIA, and that led to a small-model research program. Four papers are in preparation; none is posted yet.
 
-At Walmart, I engineered robust iOS navigation architectures (Coordinator pattern) and optimized UI rendering concurrency for millions of active monthly users. In the open-source space, I actively build privacy-first AI infrastructure, including AI that runs on the user's own device, in the browser.
+### YouxAI
 
----
+A Chrome extension and web app that tracks job applications, fills application forms from your profile and scores how well a job fits. The model is Google's Gemma 4 E2B, running in the browser through Google's LiteRT-LM web runtime, so your profile isn't sent to a server for those tasks. The code is private.
 
-### 🚀 Core Architecture Stack
-* **iOS:** Swift, SwiftUI, UIKit, Combine, MVVM-C, Swift Concurrency, XCode
-* **Frontend AI:** WebGPU (WASM), WebLLM, React 19, TypeScript, Manifest V3
-* **Backend:** Node.js, PostgreSQL, Supabase Edge Functions, GraphQL, AWS
-* **AI & ML** WebLLM, Transformers.js, MLC-LLM, Python (Pandas, NumPy)
+[youxai.app](https://youxai.app) · [Chrome Web Store](https://chromewebstore.google.com/detail/job-application-tracker/mggpimiojdmbijnlfeibpokbjnbcblnl)
 
----
+### Browser AI engine work
 
-### 🚀 Featured Projects
+- [gemma4-webgpu-engine](https://github.com/Ar5en1c/gemma4-webgpu-engine): my WebGPU inference engine for Gemma 4 E2B, in TypeScript and WGSL with no runtime dependencies. Alpha, Apache-2.0, with a [live benchmark page](https://ar5en1c.github.io/gemma4-webgpu-engine/). It was written without copying code from any other inference engine. On an RTX 5070 the latest eight-prompt runs decode at 296.5 to 296.95 tokens/s, against 272.75 to 273.25 in matching controls, with identical generated IDs.
+- [gemma4-webgpu-nvidia-subgroup-fix](https://github.com/Ar5en1c/gemma4-webgpu-nvidia-subgroup-fix): root cause and fix for an in-browser Gemma engine that printed garbage on NVIDIA GPUs under Windows. The fix runs at 213 to 223 tokens/s with correct output, against 193 for the community workaround. The patch is sent upstream and not merged yet.
+- [headroom](https://github.com/Ar5en1c/headroom): a 30-second browser test of your GPU's memory-bandwidth ceiling, plus a check for the NVIDIA bug. [Try it](https://ar5en1c.github.io/headroom/).
+- [webllm-bench](https://github.com/Ar5en1c/webllm-bench) and [qwen2.5-1.5b-ctx8192-mlc](https://github.com/Ar5en1c/qwen2.5-1.5b-ctx8192-mlc): earlier browser model benchmarks and an extended-context Qwen build ([Hugging Face](https://huggingface.co/Ar5en1c/Qwen2.5-1.5B-Instruct-q4f16_1-MLC-ctx8192)), from before YouxAI moved to Gemma 4.
 
-#### [YouxAI](https://youxai.app)
-> **A Privacy-First Career OS with on-device AI, in your browser.**
+### Research
 
-YouxAI is not just a Chrome Extension; it's a comprehensive OS for your career.
-- **On-device AI:** Runs Gemma 4 E2B through Google LiteRT-LM inside a local AI SDK (about 2 GB, downloaded once). There is no cloud model for filling applications.
-- **Résumé parsing in the browser:** A deterministic parser reads the résumé on your computer. No model is involved.
-- **Universal Autofill:** Intelligent DOM agents that navigate and fill complex application portals (Workday, Greenhouse, Lever).
+Since October 30, 2026 I've run a small-model research program sized to one RTX 5070 and an M1 MacBook. Each study writes its hypotheses down before scoring and reports only public benchmarks. Preprints in preparation:
 
-**Stack:** React 19, TypeScript, Tailwind v4, Supabase, LiteRT-LM.
+- Compressing the per-layer embedding tables of Gemma 4 E2B, building on OPTIC
+- Prompt re-reading in a looped language model
+- Exact prefill on stable WebGPU on a low-end Apple GPU
+- The subgroup reduction miscompile behind the NVIDIA bug above
 
-[**Install Extension**](https://chromewebstore.google.com/detail/job-application-tracker/mggpimiojdmbijnlfeibpokbjnbcblnl)
+### Agent tooling
 
-<br />
+- [context-guardian](https://github.com/Ar5en1c/context-guardian): an MCP server that indexes code, logs and config locally and gives coding agents search tools. On npm as `context-guardian-mcp`, 242 downloads in its first week. Its README calls its own benchmark a smoke test.
+- [youxpc](https://github.com/Ar5en1c/youxpc): a macOS MCP server that shows app windows to an agent as numbered text. It's a fork of [Ghost OS](https://github.com/ghostwright/ghost-os) by Ghostwright (MIT), and the README says so. On 17 desktop tasks, 3 trials each on one M1, it passed 51 of 51 runs against 46 of 51 for Ghost OS 2.2.1, with 77% fewer tokens. I wrote the harder tasks myself, and the README discloses that.
+- [localqa](https://github.com/Ar5en1c/localqa): a local sidecar that compacts logs, browser evidence and repo context for coding agents. 53.39% fewer input tokens on one real task; size ratios aren't billing savings.
+- [us-internships-and-new-grad-jobs](https://github.com/Ar5en1c/us-internships-and-new-grad-jobs): US internship and new-grad listings, pulled daily from employers' own job boards.
 
-#### [WebLLM Bench](https://ar5en1c.github.io/webllm-bench/)
-> **A browser-native local LLM toolkit & benchmark harness.**
+### Contact
 
-An open-source platform for testing, chatting with, and comparing open-weights models entirely on the client-side.
-- **Zero-Server Benchmarking:** Runs strict parity tests (TPS, TTFT, Latency) directly on the user's hardware via **WebGPU**.
-- **Side-by-Side Comparison:** Compare model outputs and latency metrics simultaneously in the browser.
-
-**Stack:** Vanilla JS/HTML5, WebLLM, WebGPU, Apache TVM / WASM.
-
-[**Live Demo**](https://ar5en1c.github.io/webllm-bench/) • [**View Repository**](https://github.com/Ar5en1c/webllm-bench)
-
----
-
-### 📫 Connect & Stats
-
-- **Portfolio:** [ar5en1c.github.io/react-portfolio](https://ar5en1c.github.io/react-portfolio/)
-- **LinkedIn:** [linkedin.com/in/kuldeep-5ingh](https://www.linkedin.com/in/kuldeep-5ingh/)
-- **Email:** [kponia05@gmail.com](mailto:kponia05@gmail.com)
-
-<br />
+[LinkedIn](https://www.linkedin.com/in/kuldeep-5ingh/) · [X](https://x.com/kuldeep_youxai) · [kponia05@gmail.com](mailto:kponia05@gmail.com)
